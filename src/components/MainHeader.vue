@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div>
+    <div class="container">
       <b-navbar class="flex align-items-lg-stretch p-0" toggleable="lg" type="" variant="">
         <nav class="navbar navbar-light">
           <a class="navbar-brand" href="#">

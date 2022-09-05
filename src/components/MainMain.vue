@@ -1,13 +1,15 @@
 <template>
-    <main class="text-white fw-bold py-4">
-        {{contentMain}}
-    </main>
+    <section>
+        <main class="text-white fw-bold py-4 container">
+            {{ contentMain }}
+        </main>
+    </section>
 </template>
 
 <script>
 export default {
     name: 'MainMain',
-    data() {
+    data () {
         return {
             contentMain: '--> Content goes here <--'
         }
@@ -16,7 +18,12 @@ export default {
 </script>
 
 <style lang="scss">
+section {
+    background-color: #1c1c1c;
+    flex-grow: 1;
+
     main {
-        background-color: #1c1c1c;
+        font-size: 2rem;
     }
+}
 </style>

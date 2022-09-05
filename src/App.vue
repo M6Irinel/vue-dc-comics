@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <MainHeader/>
     <MainMain/>
     <MainFooter/>
@@ -22,5 +22,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 </style>
