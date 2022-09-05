@@ -1,15 +1,20 @@
 <template>
-    <footer class="bg-primary">
-        footer
+    <footer>
+        <TopFooter/>
     </footer>
 </template>
 
 <script>
+import TopFooter from '@/components/TopFooter.vue';
+
 export default {
-    name: 'MainFooter'
+    name: 'MainFooter',
+
+    components: {
+        TopFooter
+    }
 }
 </script>
 
 <style lang="scss">
-    
 </style>
