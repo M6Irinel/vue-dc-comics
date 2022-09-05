@@ -2,7 +2,7 @@
     <footer>
         <TopFooter />
 
-        <div class="conterFooter container">
+        <div class="centerFooter container">
             <div class="list">
                 <div>
                     <h3>DC COMICS</h3>
@@ -107,10 +107,10 @@ footer {
     background-position: center;
     background-size: cover;
     
-    .conterFooter {
+    .centerFooter {
         padding: 50PX 0;
         display: flex;
-        gap: 60px;
+        gap: 30px;
         position: relative;
         overflow: hidden;
         
@@ -163,7 +163,7 @@ footer {
             padding: 10px;
 
             &:hover {
-                color: #cbcbcb;
+                color: #c6c6c6;
             }
         }
 
@@ -179,10 +179,14 @@ footer {
                     text-decoration: none;
                     font-weight: bold;
                     font-size: 1.2rem;
+
+                    &:hover {
+                        color: #008aff;
+                    }
                 }
 
                 a:not(:first-of-type):hover {
-                    filter: brightness(1.5);
+                    filter: brightness(2);
                 }
             }
         }

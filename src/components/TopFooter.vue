@@ -51,6 +51,7 @@ export default {
 
         &:hover {
             color: #fff;
+            filter: invert(1);
         }
     }
 }

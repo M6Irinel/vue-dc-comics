@@ -62,6 +62,10 @@ export default {
   a {
     color: #000;
     padding: 0 !important;
+    
+      &:hover {
+        color: gray;
+      }
   }
 
   &.active {
