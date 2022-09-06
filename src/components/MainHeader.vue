@@ -12,16 +12,7 @@
 
         <b-collapse class="flex align-items-stretch h-auto" id="nav-collapse" is-nav>
           <b-navbar-nav class="ms-auto fw-bold">
-            <b-nav-item :class="classActiveMenu(0)" @click="goBtnActive(0)" href="#">CHARACTERS</b-nav-item>
-            <b-nav-item :class="classActiveMenu(1)" @click="goBtnActive(1)" href="#">COMICS</b-nav-item>
-            <b-nav-item :class="classActiveMenu(2)" @click="goBtnActive(2)" href="#">MOVIS</b-nav-item>
-            <b-nav-item :class="classActiveMenu(3)" @click="goBtnActive(3)" href="#">TV</b-nav-item>
-            <b-nav-item :class="classActiveMenu(4)" @click="goBtnActive(4)" href="#">GAMES</b-nav-item>
-            <b-nav-item :class="classActiveMenu(5)" @click="goBtnActive(5)" href="#">COLLECTIBLES</b-nav-item>
-            <b-nav-item :class="classActiveMenu(6)" @click="goBtnActive(6)" href="#">VIDEO</b-nav-item>
-            <b-nav-item :class="classActiveMenu(7)" @click="goBtnActive(7)" href="#">FANS</b-nav-item>
-            <b-nav-item :class="classActiveMenu(8)" @click="goBtnActive(8)" href="#">NEWS</b-nav-item>
-            <b-nav-item :class="classActiveMenu(9)" @click="goBtnActive(9)" href="#">SHOP</b-nav-item>
+            <b-nav-item v-for="(el, i) in HeaderButton" :key="i" :class="classActiveMenu(i)" @click="goBtnActive(i)" :href="el.href"> {{el.content}} </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -30,11 +21,14 @@
 </template>
 
 <script>
+import HeaderButton from '@/assets/jsons/header- button.json';
+
 export default {
   name: 'MainHeader',
   data () {
     return {
-      activeNavMenuBtn: 1
+      activeNavMenuBtn: 1,
+      HeaderButton
     }
   },
   methods: {
@@ -82,7 +76,7 @@ export default {
       bottom: 0;
       left: 0;
       right: 0;
-      height: 6px;
+      height: 5px;
       background-color: #0282f9;
     }
   }

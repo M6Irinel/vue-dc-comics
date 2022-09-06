@@ -3,54 +3,13 @@
         <TopFooter />
 
         <div class="centerFooter container">
-            <div class="list">
-                <div>
-                    <h3>DC COMICS</h3>
+            <div class="list" v-for="(list, i) in footerList" :key="i">
+                <div v-for="(list2, i2) in list" :key="i2">
+                    <h3> {{list2.title}} </h3>
                     <ul>
-                        <li><a href="#">Characters</a></li>
-                        <li><a href="#">Comics</a></li>
-                        <li><a href="#">Movies</a></li>
-                        <li><a href="#">TV</a></li>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li><a href="#">Shop DC</a></li>
-                        <li><a href="#">Shop DC Collectibles</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="list">
-                <div>
-                    <h3>DC</h3>
-                    <ul>
-                        <li><a href="#">Terms Of Use</a></li>
-                        <li><a href="#">Privacy policy (New)</a></li>
-                        <li><a href="#">Ad Choices</a></li>
-                        <li><a href="#">Advartising</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Subscriptions</a></li>
-                        <li><a href="#">Talent Workshops</a></li>
-                        <li><a href="#">CPSC Certificates</a></li>
-                        <li><a href="#">Ratings</a></li>
-                        <li><a href="#">Shop Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="list">
-                <div>
-                    <h3>SITES</h3>
-                    <ul>
-                        <li><a href="#">DC</a></li>
-                        <li><a href="#">MAD Magazine</a></li>
-                        <li><a href="#">DC Kids</a></li>
-                        <li><a href="#">DC Universe</a></li>
-                        <li><a href="#">DC Power Visa</a></li>
+                        <li v-for="(list3, i3) in list2.list" :key="i3">
+                            <a :href="list3.href"> {{list3.content}} </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -68,20 +27,8 @@
 
                 <div class="right">
                     <a href="#">FOLLOW US</a>
-                    <a href="#">
-                        <img src="@/assets/img/footer-facebook.png" alt="facebook">
-                    </a>
-                    <a href="#">
-                        <img src="@/assets/img/footer-twitter.png" alt="twitter">
-                    </a>
-                    <a href="#">
-                        <img src="@/assets/img/footer-youtube.png" alt="youtube">
-                    </a>
-                    <a href="#">
-                        <img src="@/assets/img/footer-pinterest.png" alt="pinterest">
-                    </a>
-                    <a href="#">
-                        <img src="@/assets/img/footer-periscope.png" alt="periscope">
+                    <a :href="el.href" v-for="(el, i) in footerBottom" :key="i">
+                        <img :src="el.src" alt="el.alt" :title="el.alt">
                     </a>
                 </div>
             </div>
@@ -91,17 +38,51 @@
 
 <script>
 import TopFooter from '@/components/TopFooter.vue';
+import footerList from '@/assets/jsons/footer-list.json';
+
+const footerBottom = [
+    {
+        href: '#',
+        src: require( '../assets/img/footer-facebook.png' ),
+        alt: 'facebook'
+    },
+    {
+        href: '#',
+        src: require( '../assets/img/footer-twitter.png' ),
+        alt: 'twitter'
+    },
+    {
+        href: '#',
+        src: require( '../assets/img/footer-youtube.png' ),
+        alt: 'youtube'
+    },
+    {
+        href: '#',
+        src: require( '../assets/img/footer-pinterest.png' ),
+        alt: 'pinterest'
+    },
+    {
+        href: '#',
+        src: require( '../assets/img/footer-periscope.png' ),
+        alt: 'periscope'
+    },
+];
 
 export default {
     name: 'MainFooter',
-
+    data () {
+        return {
+            footerList,
+            footerBottom
+        }
+    },
     components: {
         TopFooter
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 footer {
     background-image: url('../assets/img/footer-bg.jpg');
     background-position: center;
@@ -146,6 +127,7 @@ footer {
                 text-decoration: none;
                 list-style: none;
                 font-size: 0.8rem;
+                transition: color 0.1s ease-in-out;
 
                 &:hover {
                     color: #fff;
@@ -160,7 +142,6 @@ footer {
                 transform: translateY(-17%);
             }
         }
-
     }
 
     .bottom {
@@ -181,6 +162,7 @@ footer {
             color: #fff;
             font-weight: bold;
             padding: 10px;
+            transition: color 0.1s ease-in-out;
 
             &:hover {
                 color: #c6c6c6;
@@ -194,11 +176,12 @@ footer {
             .right {
                 display: flex;
                 gap: 20px;
-
+                
                 a:first-of-type {
                     text-decoration: none;
                     font-weight: bold;
                     font-size: 1.2rem;
+                    transition: all 0.1s ease-in-out;
 
                     &:hover {
                         color: #008aff;

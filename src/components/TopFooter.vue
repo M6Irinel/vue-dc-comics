@@ -50,6 +50,7 @@ export default {
         display: flex;
         align-items: center;
         gap: 10px;
+        transition: filter 0.1s ease-in-out;
 
         &:hover {
             color: #fff;

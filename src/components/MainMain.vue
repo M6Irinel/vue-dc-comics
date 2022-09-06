@@ -3,8 +3,8 @@
         <div class="bg">
             <main class="text-white fw-bold py-4 container">
                 <button class="but px-3 py-1">CURRENT SERIES</button>
-                <div class="row">
-                    <cardForMain v-for="(el, i) in dcComics" :key="i" :dcComics="el" />
+                <div class="row my-3">
+                    <cardForMain class="myCard" v-for="(el, i) in dcComics" :key="i" :dcComics="el" />
                 </div>
                 <div class="contenitor-but">
                     <button class="but2 px-5 py-2">LOAD MORE</button>
@@ -77,6 +77,17 @@ section {
             .but2 {
                 font-size: 0.8rem;
                 font-weight: 500;
+            }
+        }
+
+        .myCard {
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+            
+            &:hover {
+                box-shadow: 0 0 10px #313131;
+                transform: scale(1.05);
+                border-radius: 5px;
             }
         }
     }
