@@ -106,19 +106,28 @@ footer {
     background-image: url('../assets/img/footer-bg.jpg');
     background-position: center;
     background-size: cover;
-    
+
     .centerFooter {
-        padding: 50PX 0;
+        // padding: 50px 0;
         display: flex;
         gap: 30px;
         position: relative;
-        overflow: hidden;
-        
-        .logo-footer{
+        // overflow: hidden;
+
+        .list {
+            position: relative;
+            z-index: 1000;
+            padding: 40px 0;
+        }
+
+        .logo-footer {
+            height: 150%;
+            transform: translateY(-17%);
+
             position: absolute;
-            top: -120px;
+            // top: -120px;
             right: 0;
-            width: 650px;
+            // width: 650px;
         }
 
         h3 {
@@ -143,10 +152,21 @@ footer {
                 }
             }
         }
+
+        @media screen and (max-width: 767.98px) {
+            .logo-footer {
+                width: 100%;
+                height: auto;
+                transform: translateY(-17%);
+            }
+        }
+
     }
 
     .bottom {
+        position: relative;
         background-color: #303030;
+        z-index: 1000;
         padding: 35px;
 
         .container {

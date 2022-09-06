@@ -38,8 +38,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .top {
+    position: relative;
+    z-index: 1000;
     background-color: #0282f9;
 
     a {
@@ -52,6 +54,12 @@ export default {
         &:hover {
             color: #fff;
             filter: invert(1);
+        }
+    }
+
+    @media screen and (max-width: 767.98px){
+        a {
+            width: 100%;
         }
     }
 }
