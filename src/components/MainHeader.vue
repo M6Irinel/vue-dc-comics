@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import HeaderButton from '@/assets/jsons/header- button.json';
+import HeaderButton from '../assets/jsons/header- button.json';
 
 export default {
   name: 'MainHeader',

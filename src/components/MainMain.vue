@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import dcComics from '@/assets/jsons/dc-comics.json';
+import dcComics from '../assets/jsons/dc-comics.json';
 import cardForMain from './cardForMain.vue';
 
 export default {

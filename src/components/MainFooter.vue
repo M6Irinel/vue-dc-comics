@@ -15,7 +15,7 @@
             </div>
 
             <div class="ms-auto">
-                <img class="logo-footer" src="@/assets/img/dc-logo-bg.png" alt="dc logo bg">
+                <img class="logo-footer" src="../assets/img/dc-logo-bg.png" alt="dc logo bg">
             </div>
         </div>
 
@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import TopFooter from '@/components/TopFooter.vue';
-import footerList from '@/assets/jsons/footer-list.json';
+import TopFooter from '../components/TopFooter.vue';
+import footerList from '../assets/jsons/footer-list.json';
 
 const footerBottom = [
     {
